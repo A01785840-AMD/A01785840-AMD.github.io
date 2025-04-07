@@ -1,4 +1,4 @@
-var u=s=>{throw TypeError(s)};var b=(s,e,r)=>e.has(s)||u("Cannot "+r);var d=(s,e,r)=>e.has(s)?u("Cannot add the same private member more than once"):e instanceof WeakSet?e.add(s):e.set(s,r);var l=(s,e,r)=>(b(s,e,"access private method"),r);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&o(a)}).observe(document,{childList:!0,subtree:!0});function r(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(t){if(t.ep)return;t.ep=!0;const i=r(t);fetch(t.href,i)}})();var n,p,h,m;class v{constructor(e="",{event:r="DOMContentLoaded",linkTag:o="router-link",delegateClick:t=!0,scrollToTop:i=!0}={}){d(this,n);const a=()=>{document.body.innerHTML=`
+var d=s=>{throw TypeError(s)};var b=(s,e,r)=>e.has(s)||d("Cannot "+r);var u=(s,e,r)=>e.has(s)?d("Cannot add the same private member more than once"):e instanceof WeakSet?e.add(s):e.set(s,r);var l=(s,e,r)=>(b(s,e,"access private method"),r);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const a of i.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&o(a)}).observe(document,{childList:!0,subtree:!0});function r(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(t){if(t.ep)return;t.ep=!0;const i=r(t);fetch(t.href,i)}})();var n,p,h,m;class v{constructor(e="",{event:r="DOMContentLoaded",linkTag:o="router-link",delegateClick:t=!0,scrollToTop:i=!0}={}){u(this,n);const a=()=>{document.body.innerHTML=`
             <div style="margin 0; padding: 0; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100dvh; min-width: 100dvw; background-color: #242424;">
                 <h1 style="color: white;  font: 700 5rem/0.8em system-ui, Avenir, Helvetica, Arial, sans-serif;">
                     404 | Page not Found
@@ -10,16 +10,16 @@ var u=s=>{throw TypeError(s)};var b=(s,e,r)=>e.has(s)||u("Cannot "+r);var d=(s,e
     <div>
         <h1>HELLO WORLD!!</h1>
         <p>By Angel MD</p>
-        <a href="/about" class="page-link">Click Me</a>
-        <a href="/game" class="page-link">Start Game</a>
+        <a href="/about" data-rl class="page-link">Click Me</a>
+        <a href="/game" data-rl class="page-link">Start Game</a>
     </div>`},about:()=>{c.innerHTML=`
     <div>
         <h1>About Me!</h1>
         <p>By Angel MD</p>
-        <a href="/" class="page-link">Click Me</a>
+        <a href="/" data-rl class="page-link">Click Me</a>
     </div>`},not_found:()=>{c.innerHTML=`
         <div>
             <h1>Page not found 404.</h1>
             <p>By Angel MD</p>
-            <a href="/" class="page-link">Click Me</a>
-        </div>`}},g=new v;g.on("/",f.home).on("/about",f.about).notFound(f.not_found);
+            <a href="/" data-rl class="page-link">Click Me</a>
+        </div>`}},g=new v("",{linkTag:"rl"});g.on("/",f.home).on("/about",f.about).notFound(f.not_found);
