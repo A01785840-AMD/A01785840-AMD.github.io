@@ -1,4 +1,5 @@
 import './index.css'
+import Router from "@/core/router.js";
 
 const app = document.getElementById("app");
 
@@ -30,32 +31,9 @@ const renders = {
     },
 }
 
-const routes = {
-    404: renders.not_found,
-    '/': renders.home,
-    '/about': renders.about
-}
+const router = new Router();
 
-const router = (path) => {
-    window.history.pushState({}, "", path);
-    const route = routes[path] || routes[404];
-
-    route();
-
-    document.querySelectorAll(".page-link").forEach(link => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-
-            const path = event.target.getAttribute("href");
-            router(path);
-        })
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    router(window.location.pathname);
-});
-
-window.addEventListener("popstate", () => {
-    router(window.location.pathname);
-})
+router
+    .on('/', renders.home)
+    .on('/about', renders.about)
+    .notFound(renders.not_found);
