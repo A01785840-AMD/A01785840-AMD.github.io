@@ -2,7 +2,7 @@
  * By Angel Montemayor Davila, A01785840
  * 7-APR-2025
  */
-import Component from './Component.js';
+import Component from '@aether/Component.js';
 
 
 function handleComponent(componentFn, props, ...children) {

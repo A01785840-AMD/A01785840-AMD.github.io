@@ -1,5 +1,5 @@
 import Aether from "@/core/aether/Aether.js";
-import styles from './404.module.css';
+import styles from "@pages/404/404.module.css"
 
 
 export default function not_found_page(props) {

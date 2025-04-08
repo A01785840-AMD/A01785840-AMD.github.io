@@ -1,6 +1,6 @@
 import Aether from "@/core/aether/Aether.js";
 import NavCard from "@/components/NavCard.jsx";
-import styles from './home.module.css';
+import styles from '@pages/home/home.module.css';
 
 
 export default function home_page() {

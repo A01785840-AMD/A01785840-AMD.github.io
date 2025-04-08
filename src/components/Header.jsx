@@ -1,5 +1,5 @@
 import styles from "@/components/Header.module.css";
-import Aether from "@/core/aether/Aether.js";
+import Aether from "@aether/Aether.js";
 
 
 export default function Header(props) {
