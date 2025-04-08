@@ -1,3 +1,5 @@
+import Component from "@/core/component.js";
+
 export default function home_page(props) {
     const html = `
     <div>
@@ -8,5 +10,5 @@ export default function home_page(props) {
     </div>
     `;
 
-    return [html, (() => {})];
+    return new Component(html);
 }

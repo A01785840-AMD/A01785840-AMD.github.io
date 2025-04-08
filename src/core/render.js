@@ -2,32 +2,13 @@
  * By Angel Montemayor Davila, A01785840
  * 7-APR-2025
  */
+import Component from "@/core/component.js";
 
+let currentComponentInstance = null;
 
-export default async function render (component, props = {}, targetId = 'app') {
-    if (typeof component !== 'function') {
-        console.error('Render error: Provided component is not a function.', component);
-        return;
-    }
-
-    let result;
-
-    try {
-        result = await component(props);
-    } catch (err) {
-        console.error(`Render error in component '${component.name || 'anonymous'}':`, err);
-        return;
-    }
-
-    if (!Array.isArray(result) || result.length !== 2) {
-        console.error(`Render error: Component '${component.name || 'anonymous'}' should return [htmlString, afterMountFn]. Got:`, result);
-        return;
-    }
-
-    const [html, afterMount] = result;
-
-    if (typeof html !== 'string') {
-        console.error(`Render error: First element returned by '${component.name || 'anonymous'}' must be an HTML string.`);
+export default async function render(componentFn, props = {}, targetId = 'app') {
+    if (typeof componentFn !== 'function') {
+        console.error('Render error: Provided component is not a function.', componentFn);
         return;
     }
 
@@ -37,13 +18,34 @@ export default async function render (component, props = {}, targetId = 'app') {
         return;
     }
 
-    container.innerHTML = html;
+    try {
+        currentComponentInstance?.cleanupFunction?.();
+    } catch (err) {
+        console.warn('Cleanup error:', err);
+    }
+
+    let instance;
+    try {
+        const result = await componentFn(props);
+
+        if (!(result instanceof Component)) {
+            console.error('Render error: Component function must return an instance of Component.');
+            return;
+        }
+
+        instance = result;
+    } catch (err) {
+        console.error(`Render error in component '${componentFn.name || 'anonymous'}':`, err);
+        return;
+    }
+
+    container.innerHTML = instance.html;
 
     try {
-        if (typeof afterMount === 'function') {
-            afterMount();
-        }
+        instance.afterRender();
     } catch (err) {
-        console.error(`afterMount error in component '${component.name || 'anonymous'}':`, err);
+        console.error(`afterRender error in component '${componentFn.name || 'anonymous'}':`, err);
     }
+
+    currentComponentInstance = instance;
 };
