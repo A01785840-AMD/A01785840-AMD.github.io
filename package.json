@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.js --mode develop",
+    "dev:expose": "vite --config vite.config.js --mode develop --host",
     "build": "vite build --config vite.config.js --mode production && cp dist/index.html dist/404.html",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
