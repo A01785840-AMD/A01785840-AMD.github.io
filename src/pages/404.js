@@ -1,11 +1,16 @@
 import Component from "@/core/component.js";
+import styles from './404.module.css';
+
 
 export default function not_found_page(props) {
     const html = `
-    <div>
-        <h1>Page not found 404.</h1>
-        <p>By Angel MD</p>
-        <a href="/" data-rl class="page-link">Click Me</a>
+    <div class="${styles.errorContainer}">
+        <div class="${styles.errorCode}">404</div>
+        <div class="${styles.errorTitle}">Page Not Found</div>
+        <div class="${styles.errorMessage}">
+            Oops! The page you're looking for doesn't seem to exist.
+        </div>
+        <a href="/" data-rl class="${styles.errorButton}">Take Me Home</a>
     </div>
     `;
 
