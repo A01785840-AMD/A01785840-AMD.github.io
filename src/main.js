@@ -1,10 +1,11 @@
 import './index.css'
-import Router from "@/core/router.js";
+import Router from "@router/router.js";
 import render from "@/core/render.js";
+
+import not_found_page from "@/pages/404.js";
 
 import home_page from "@/pages/home.js";
 import about_page from "@/pages/about.js";
-import not_found_page from "@/pages/404.js";
 import blog_page from "@/pages/blog/blog.js";
 
 
