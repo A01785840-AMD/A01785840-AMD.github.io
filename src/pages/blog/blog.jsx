@@ -4,7 +4,7 @@ import Footer from "@/components/Footer.jsx";
 import Section from "@/components/Section.jsx";
 import NavBar from "@/components/NavBar.jsx";
 import Table from "@/components/Table.jsx";
-import styles from "./blog.module.css";
+import styles from "@pages/blog/blog.module.css";
 
 
 export default function blog_page() {

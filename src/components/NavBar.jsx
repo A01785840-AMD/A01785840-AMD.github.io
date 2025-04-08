@@ -1,4 +1,4 @@
-import Aether from "@/core/aether/Aether.js";
+import Aether from "@aether/Aether.js";
 import styles from "./NavBar.module.css";
 
 
