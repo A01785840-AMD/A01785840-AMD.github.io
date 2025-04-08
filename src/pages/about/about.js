@@ -1,4 +1,5 @@
-import Component from "@/core/component.js";
+import Aether from "@aether/Aether.js";
+
 
 export default function about_page(props) {
     const html = `
@@ -9,5 +10,5 @@ export default function about_page(props) {
     </div>
     `;
 
-    return new Component(html);
+    return new Aether.Component(html);
 }
