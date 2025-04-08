@@ -16,16 +16,45 @@ function handleComponent(componentFn, props, ...children) {
 }
 
 function handleHtmlElement(tag, props, ...children) {
+    if (!tag) {
+        console.error("Error: Missing tag in handleHtmlElement");
+        return '';
+    }
+
+    props = props || {};
+
     const attrString = Object.entries(props)
-        .filter(([key]) => key !== 'children')
-        .map(([key, val]) => `${key}="${val}"`)
+        .filter(([key]) => key !== 'children' && key !== undefined && props[key] !== undefined)
+        .map(([key, val]) => {
+            try {
+                return `${key}="${val}"`;
+            } catch (err) {
+                console.error(`Error processing attribute ${key}:`, err);
+                return '';
+            }
+        })
+        .filter(Boolean)
         .join(' ');
 
     const childHTML = (children || [])
-        .map(child => typeof child === 'string' ? child : child.html)
+        .filter(child => child !== null && child !== undefined)
+        .map(child => {
+            try {
+                if (typeof child === 'string') return child;
+                if (child && child.html) return child.html;
+
+                // Handle unexpected child types
+                console.warn(`Non-renderable child found in ${tag}:`, child);
+                return String(child);
+            } catch (err) {
+                console.error(`Error rendering child in ${tag}:`, err);
+                return '';
+            }
+        })
         .join('');
 
-    return `<${tag} ${attrString}>${childHTML}</${tag}>`;
+    const attrs = attrString ? ` ${attrString}` : '';
+    return `<${tag}${attrs}>${childHTML}</${tag}>`;
 }
 
 
@@ -33,8 +62,6 @@ export function forgeComponent(tag, props = {}, ...children) {
     props = props || {};
     children = (props.children || []).concat(children).flat();
     props.children = null;
-
-    console.log({tag, props, children})
 
     if (typeof tag === 'function') {
         return handleComponent(tag, props, ...children);
