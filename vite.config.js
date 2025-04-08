@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
             alias: {
                 '@': path.resolve(__dirname, 'src'),
                 '@router': path.resolve(__dirname, 'src/core/router'),
+                '@pages': path.resolve(__dirname, 'src/pages'),
                 '@aether': path.resolve(__dirname, `src/core/aether`)
             }
         },
