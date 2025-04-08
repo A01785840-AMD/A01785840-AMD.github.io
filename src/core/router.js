@@ -3,7 +3,6 @@
  * 7-APR-2025
  */
 
-
 export default class Router {
     constructor(basePath = "", {
         event = "DOMContentLoaded",

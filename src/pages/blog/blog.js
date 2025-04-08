@@ -1,3 +1,5 @@
+import Component from "@/core/component.js";
+
 export default function blog_page(props) {
     const html = `
     <div id="blog">
@@ -71,5 +73,5 @@ export default function blog_page(props) {
     </div>
     `;
 
-    return [html, (() => {})];
+    return new Component(html);
 }
