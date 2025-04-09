@@ -30,3 +30,6 @@ router.group('/blog', (group) => {
         .on('/git', () => Aether.render(git_github_page))
         .on('/terminal', () => Aether.render(terminal_guide_page))
 });
+
+// TODO: figure out style tag in component to make them local
+// TODO: Add the css writing animation to the Hello world title
