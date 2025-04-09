@@ -1,0 +1,65 @@
+.margin-xs {
+    margin: var(--spacing-xs);
+}
+
+.margin-s {
+    margin: var(--spacing-s);
+}
+
+.margin-m {
+    margin: var(--spacing-m);
+}
+
+.padding-xs {
+    padding: var(--spacing-xs);
+}
+
+.padding-s {
+    padding: var(--spacing-s);
+}
+
+.padding-m {
+    padding: var(--spacing-m);
+}
+
+.padding-l {
+    padding: var(--spacing-l)
+}
+
+.padding-xl {
+    padding: var(--spacing-xl)
+}
+
+.padding-xxl {
+    padding: var(--spacing-xxl)
+}
+
+.width-full {
+    width: 100%;
+}
+
+.height-full {
+    height: 100%;
+}
+
+.min-height-screen {
+    min-height: 100dvh;
+}
+
+.radius-s {
+    border-radius: 0.25rem;
+}
+
+.radius-m {
+    border-radius: 0.5rem;
+}
+
+.radius-l {
+    border-radius: 1rem;
+}
+.radius-xl {
+    border-radius: 1.5rem;
+}
+.radius-xxl {
+    border-radius: 1.75rem;
+}

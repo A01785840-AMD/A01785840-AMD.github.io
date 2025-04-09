@@ -1,0 +1,36 @@
+.hover-transition {
+    transition: all 0.3s ease;
+}
+
+.hover-transition:hover {
+    transition: all 0.3s ease;
+    transform: translateY(-3px);
+}
+
+.hover-transition-box-shadow {
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hover-transition-box-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hover-scale {
+    transition: transform 0.2s;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-parent-appear {
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+*:hover > .hover-parent-appear {
+    opacity: 1;
+    transform: translateX(5px);
+}

@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
                 '@': path.resolve(__dirname, 'src'),
                 '@router': path.resolve(__dirname, 'src/core/router'),
                 '@pages': path.resolve(__dirname, 'src/pages'),
+                '@styles': path.resolve(__dirname, 'src/styles'),
                 '@aether': path.resolve(__dirname, `src/core/aether`)
             }
         },

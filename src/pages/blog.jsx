@@ -1,17 +1,18 @@
 import Aether from "@/core/aether/Aether.js";
+
+import Section from "@/components/Section.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
-import Section from "@/components/Section.jsx";
 import NavBar from "@/components/NavBar.jsx";
 import Table from "@/components/Table.jsx";
-import styles from "@pages/blog/blog.module.css";
 
 
 export default function blog_page() {
     return new Aether.Component(
-        <div class={styles.blogContainer}>
+        <div style="padding: 0 2rem;">
             <Header title="Blog Desarrollo Web"
-                    description="Bienvenidos a mi blog sobre Git, GitHub y Comandos de Terminal"/>
+                    description="Bienvenidos a mi blog sobre Git, GitHub y Comandos de Terminal"
+            />
 
             <NavBar links={[
                 { href: "/", text: "Inicio" },
@@ -19,9 +20,10 @@ export default function blog_page() {
                 { href: "/blog/terminal", text: "Terminal" }
             ]}/>
 
+            <br/>
             <Section title="Propósito de esta página"
                      description="Este blog tiene como objetivo <strong>documentar</strong> y
-                   <em>compartir</em> conocimientos sobre:">
+                     <em>compartir</em> conocimientos sobre:">
                 <ul>
                     <li>El flujo de trabajo con <u>Git y GitHub</u></li>
                     <li>Comandos útiles de terminal</li>
@@ -39,7 +41,6 @@ export default function blog_page() {
 
             <Section title="Herramientas Utilizadas">
                 <Table
-                    className={styles.blogTable}
                     headers={["Herramienta", "Descripción"]}
                     rows={[
                         ["Git", "Control de versiones"],
@@ -47,17 +48,15 @@ export default function blog_page() {
                         ["Terminal", "Interfaz de línea de comandos"]
                     ]}
                 />
-            </Section>
-
-            <Section title="Recursos adicionales">
+                <br/>
+                <h2>Recursos adicionales</h2>
                 <p>
-                    Visita la
-                    <a href="https://docs.github.com/es" target="_blank">
-                        documentación oficial de GitHub
-                    </a>
+                    Visita la <a href="https://docs.github.com/es" target="_blank"> documentación oficial de GitHub</a>
                 </p>
-                <div class={styles.blogResource}>
-                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                <br/>
+                <div class="flex-row gap-m">
+                    <img class="radius-m hover-scale"
+                         src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                          alt="Logo de GitHub" width="100"/>
                     <p>GitHub ofrece una documentación completa para ayudarte a dominar sus herramientas</p>
                 </div>

@@ -7,8 +7,7 @@
 }
 
 .Section h2, .Section h3 {
-    color: #3a7bd5;
-    margin-bottom: 1rem;
+    color: var(--color-primary);
 }
 
 .Section ul, .Section ol {

@@ -1,12 +1,13 @@
-import styles from "@/components/Header.module.css";
 import Aether from "@aether/Aether.js";
 
 
 export default function Header(props) {
     return new Aether.Component(
-        <header class={styles.header}>
-            <h1>{props.title}</h1>
-            <p>{props.description}</p>
-        </header> 
+        <header style="padding: 2rem 0 2rem;">
+            <h1 class="color-gradient">{props.title}</h1>
+            <p class="color-gray70">{props.description}</p>
+            <br/>
+            <hr style="border: none; height: 2px; background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));"/>
+        </header>
     );
 }
