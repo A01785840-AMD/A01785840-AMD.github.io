@@ -6,7 +6,7 @@ import {
     currentComponents,
     previousComponents,
     swapRegistries,
-} from '@aether/lifecycleState.js';
+} from '@aether/lifeCycleState.js';
 
 
 // Alias comp = component, compFn = componentFunction
