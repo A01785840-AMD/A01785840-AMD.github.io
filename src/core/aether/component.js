@@ -2,7 +2,7 @@
  * By Angel Montemayor Davila, A01785840
  * 7-APR-2025
  */
-import { currentComponents, getNewComponentId } from '@aether/lifecycleState.js';
+import { currentComponents, getNewComponentId } from '@aether/lifeCycleState.js';
 
 
 export default class Component {
