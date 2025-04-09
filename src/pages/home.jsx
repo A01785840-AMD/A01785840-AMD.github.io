@@ -1,6 +1,6 @@
 import Aether from "@/core/aether/Aether.js";
 import NavCard from "@/components/NavCard.jsx";
-import Accent from "@/components/Accent.jsx";
+import Accent from "@/components/Accent.js";
 
 
 export default function home_page() {

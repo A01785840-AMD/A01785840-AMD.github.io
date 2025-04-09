@@ -3,6 +3,7 @@
  * 7-APR-2025
  */
 import {
+    clearRegistries,
     currentComponents,
     previousComponents,
     swapRegistries,
@@ -41,4 +42,41 @@ export default async function render(compFn, props = {}, targetId = 'app') {
     }
 
     swapRegistries();
+}
+
+export function build(compFn, props = {}) {
+    let instance;
+    try {
+        instance = compFn(props);
+    } catch (err) {
+        console.error(`Render failed in component '${compFn.name || 'anonymous'}':`, err);
+        return;
+    }
+
+    clearRegistries();
+
+    return instance.html;
+}
+
+export async function mount(html, targetId = 'app') {
+    const container = document.getElementById(targetId);
+    if (!container) throw new Error(`No element with id "${targetId}"`);
+
+    for (const comp of previousComponents.values()) {
+        try {
+            await comp.cleanupFunction?.();
+        } catch (err) {
+            console.warn(`Cleanup failed for ${comp.id}`, err);
+        }
+    }
+
+    container.innerHTML = html;
+
+    for (const comp of currentComponents.values()) {
+        try {
+            await comp.afterRender?.();
+        } catch (err) {
+            console.warn(`afterRender failed for ${comp.id}`, err);
+        }
+    }
 }

@@ -4,14 +4,16 @@
  */
 import Component from "@aether/component.js";
 import { forgeComponent } from "@aether/forgeComponent.js";
-import render from "@/core/aether/render.js";
+import render, { build, mount } from "@/core/aether/render.js";
 import htm from "htm";
 
 
 const Aether = {
     forgeComponent,
     Component,
-    render
+    render,
+    build,
+    mount
 };
 
 const html = htm.bind(Aether.forgeComponent);
