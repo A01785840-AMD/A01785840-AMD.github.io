@@ -1,5 +1,5 @@
 import Aether from "@aether/Aether.js";
-import styles from "./Table.module.css";
+import styles from "@styles/Table.module.css";
 
 
 export default function Table({ headers = [], rows = [], className = "" }) {

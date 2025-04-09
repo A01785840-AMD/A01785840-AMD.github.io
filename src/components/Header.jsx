@@ -1,4 +1,4 @@
-import styles from "@/components/Header.module.css";
+import styles from "@styles/Header.module.css";
 import Aether from "@aether/Aether.js";
 
 

@@ -1,5 +1,5 @@
 import Aether from "@aether/Aether.js";
-import styles from "./NavCard.module.css";
+import styles from "@styles/NavCard.module.css";
 
 
 export default function NavCard(props) {

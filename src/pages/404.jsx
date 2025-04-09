@@ -1,8 +1,8 @@
 import Aether from "@/core/aether/Aether.js";
-import styles from "@pages/404/404.module.css"
+import styles from "@styles/404.module.css"
 
 
-export default function not_found_page(props) {
+export default function not_found_page() {
     return new Aether.Component(
         <div class={styles.errorContainer}>
             <div class={styles.errorCode}>404</div>

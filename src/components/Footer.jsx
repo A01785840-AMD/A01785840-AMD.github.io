@@ -1,4 +1,4 @@
-import styles from "@/components/Footer.module.css";
+import styles from "@styles/Footer.module.css";
 import Aether from "@aether/Aether.js";
 
 

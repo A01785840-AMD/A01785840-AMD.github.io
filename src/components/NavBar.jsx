@@ -1,5 +1,5 @@
 import Aether from "@aether/Aether.js";
-import styles from "./NavBar.module.css";
+import styles from "@styles/NavBar.module.css";
 
 
 export default function NavBar({ links = [] }) {

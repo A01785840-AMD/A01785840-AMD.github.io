@@ -1,10 +1,10 @@
 import Aether from "@/core/aether/Aether.js";
 import NavCard from "@/components/NavCard.jsx";
-import styles from '@pages/home/home.module.css';
+import styles from '@styles/home.module.css';
 
 
 export default function home_page() {
-    return new Aether.Component((
+    return new Aether.Component(
         <div class={styles.homeContainer}>
             <div class={styles.heroSection}>
                 <h1 class={styles.mainTitle}>HELLO WORLD</h1>
@@ -19,5 +19,5 @@ export default function home_page() {
                 <NavCard href="/contact" title="Contact" description="Get in touch with me"/>
             </div>
         </div>
-    ));
+    );
 }
