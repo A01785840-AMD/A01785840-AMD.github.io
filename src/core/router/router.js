@@ -84,7 +84,10 @@ export default class Router {
 
     group(prefix, callback) {
         const scopedRouter = {
-            on: (subPath, handler) => this.on(`${prefix}${subPath}`, handler)
+            on: (subPath, handler) => {
+                this.on(`${prefix}${subPath}`, handler);
+                return scopedRouter;
+            }
         };
 
         callback(scopedRouter);
@@ -126,13 +129,20 @@ export default class Router {
     #normalizePath(path) {
         try {
             const url = new URL(path, location.origin);
-            let normalized = url.pathname.replace(this.base_path, "");
+            let normalized = url.pathname;
+
+            if (this.base_path && normalized.startsWith(this.base_path)) {
+                normalized = normalized.slice(this.base_path.length);
+            }
+
             if (!normalized.startsWith("/")) normalized = "/" + normalized;
+
             return normalized.replace(/\/+$/, "") || "/";
         } catch {
             return "/";
         }
     }
+
 
     #init() {
         const selector = `[${this.link_tag}]`;
