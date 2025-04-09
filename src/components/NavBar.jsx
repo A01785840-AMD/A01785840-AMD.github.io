@@ -1,5 +1,4 @@
 import Aether from "@aether/Aether.js";
-import styles from "@styles/NavBar.module.css";
 
 
 export default function NavBar({ links = [] }) {
@@ -8,10 +7,16 @@ export default function NavBar({ links = [] }) {
     ];
 
     return new Aether.Component(
-        <nav class={styles.NavBar}>
-            <ul>
+        <nav class="bg-black-light radius-l padding-m">
+            <ul class="flex-row flex-center gap-l" style="list-style: none;">
                 {navLinks.map(link => (
-                    <li><a href={link.href} data-rl>{link.text}</a></li>
+                    <li>
+                        <a class="hover-transition hover-shadow-l radius-m hover-bg-black color-white"
+                           style="padding: 0.5rem 1rem;"
+                           href={link.href} data-rl>
+                            {link.text}
+                        </a>
+                    </li>
                 ))}
             </ul>
         </nav>

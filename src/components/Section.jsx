@@ -6,7 +6,7 @@ export default function Section(props, ...children) {
     return new Aether.Component(
         <section class={styles.Section}>
             <h2>{props.title}</h2>
-            <p>{props.description}</p>
+            <p class="color-gray70">{props.description}</p>
             {...children}
         </section>
     );

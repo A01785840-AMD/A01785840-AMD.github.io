@@ -1,0 +1,19 @@
+.nowrap {
+    white-space: nowrap;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}

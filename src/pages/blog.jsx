@@ -6,12 +6,10 @@ import Footer from "@/components/Footer.jsx";
 import NavBar from "@/components/NavBar.jsx";
 import Table from "@/components/Table.jsx";
 
-import styles from "@styles/blog.module.css";
-
 
 export default function blog_page() {
     return new Aether.Component(
-        <div class={styles.blogContainer}>
+        <div style="padding: 0 2rem;">
             <Header title="Blog Desarrollo Web"
                     description="Bienvenidos a mi blog sobre Git, GitHub y Comandos de Terminal"
             />
@@ -22,6 +20,7 @@ export default function blog_page() {
                 { href: "/blog/terminal", text: "Terminal" }
             ]}/>
 
+            <br/>
             <Section title="Propósito de esta página"
                      description="Este blog tiene como objetivo <strong>documentar</strong> y
                      <em>compartir</em> conocimientos sobre:">
@@ -42,7 +41,6 @@ export default function blog_page() {
 
             <Section title="Herramientas Utilizadas">
                 <Table
-                    className={styles.blogTable}
                     headers={["Herramienta", "Descripción"]}
                     rows={[
                         ["Git", "Control de versiones"],
@@ -55,8 +53,10 @@ export default function blog_page() {
                 <p>
                     Visita la <a href="https://docs.github.com/es" target="_blank"> documentación oficial de GitHub</a>
                 </p>
-                <div class={styles.blogResource}>
-                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                <br/>
+                <div class="flex-row gap-m">
+                    <img class="radius-m hover-scale"
+                         src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                          alt="Logo de GitHub" width="100"/>
                     <p>GitHub ofrece una documentación completa para ayudarte a dominar sus herramientas</p>
                 </div>

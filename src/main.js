@@ -7,7 +7,7 @@ import home_page from "@/pages/home.jsx";
 import about_page from "@/pages/about.jsx";
 import blog_page from "@/pages/blog.jsx";
 
-import '@styles/index.css'
+import '@styles/index.css';
 
 
 const router = new Router("", {

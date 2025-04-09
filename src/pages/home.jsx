@@ -1,18 +1,21 @@
 import Aether from "@/core/aether/Aether.js";
 import NavCard from "@/components/NavCard.jsx";
-import styles from '@styles/home.module.css';
+import Accent from "@/components/Accent.jsx";
 
 
 export default function home_page() {
     return new Aether.Component(
-        <div class={styles.homeContainer}>
-            <div class={styles.heroSection}>
-                <h1 class={styles.mainTitle}>HELLO WORLD</h1>
-                <p class={styles.subtitle}>Welcome to Angel MD's Web Page for TC2005B</p>
-                <div class={styles.heroAccent}></div>
+        <div class="padding-xxl">
+            <br/>
+            <div>
+                <h1 class="color-gradient">HELLO WORLD</h1>
+                <p class="color-gray70">Welcome to Angel MD's Web Page for TC2005B</p>
+                <Accent/>
             </div>
 
-            <div class={styles.cardGrid}>
+            <br/>
+
+            <div class="flex-row flex-wrap gap-xl">
                 <NavCard href="/about" title="About Me" description="Learn more about my skills and experience"/>
                 <NavCard href="/blog" title="Blog" description="Check out my latest articles and thoughts"/>
                 <NavCard href="/projects" title="Projects" description="View my portfolio of recent work"/>
