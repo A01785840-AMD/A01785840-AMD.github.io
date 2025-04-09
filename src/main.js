@@ -12,6 +12,7 @@ import '@styles/index.css';
 import blog_page from "@/pages/blog/blog.jsx";
 import git_github_page from "@pages/blog/git_github_page.jsx";
 import terminal_guide_page from "@pages/blog/terminal_guide_page.jsx";
+import SimpleWebPage from "@pages/SimpleWebPage.js";
 
 
 const router = new Router("", {
@@ -31,5 +32,6 @@ router.group('/blog', (group) => {
         .on('/terminal', () => Aether.render(terminal_guide_page))
 });
 
-// TODO: figure out style tag in component to make them local
+router.on(`/simpleweb`, () => Aether.render(SimpleWebPage));
+
 // TODO: Add the css writing animation to the Hello world title
