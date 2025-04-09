@@ -1,10 +1,10 @@
 import Aether from "@/core/aether/Aether.js";
 
-import Section from "@/components/Section.jsx";
+import Section from "@/components/Section.js";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import NavBar from "@/components/NavBar.jsx";
-import Table from "@/components/Table.jsx";
+import Table from "@/components/Table.js";
 
 export default function git_github_page() {
     return new Aether.Component(

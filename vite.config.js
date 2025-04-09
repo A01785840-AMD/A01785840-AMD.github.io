@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import path from 'path'
+import aetherStylePlugin from "./AetherStyle.js";
+
 
 export default defineConfig(({ mode }) => {
     return {
@@ -22,5 +24,8 @@ export default defineConfig(({ mode }) => {
                 generateScopedName: '[name]__[local]___[hash:base64:5]'
             }
         },
+        plugins: [
+            aetherStylePlugin()
+        ]
     };
 });

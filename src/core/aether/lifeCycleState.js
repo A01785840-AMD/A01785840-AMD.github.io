@@ -19,10 +19,16 @@ function swapRegistries() {
     currentComponents.clear();
 }
 
+function clearRegistries() {
+    previousComponents.clear();
+    currentComponents.clear();
+}
+
 
 export {
     currentComponents,
     previousComponents,
     getNewComponentId,
     swapRegistries,
+    clearRegistries
 };
