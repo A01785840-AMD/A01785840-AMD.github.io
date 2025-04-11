@@ -8,7 +8,7 @@ export default function home_page() {
         <div class="padding-xxl">
             <br/>
             <div>
-                <h1 class="color-gradient">HELLO WORLD</h1>
+                <h1 class="color-gradient animate-typing">HELLO WORLD</h1>
                 <p class="color-gray70">Welcome to Angel MD's Web Page for TC2005B</p>
                 <Accent/>
             </div>
@@ -19,6 +19,7 @@ export default function home_page() {
                 <NavCard href="/about" title="About Me" description="Learn more about my skills and experience"/>
                 <NavCard href="/blog" title="Blog" description="Check out my latest articles and thoughts"/>
                 <NavCard href="/simpleweb" title="Simple WebPage" description="View my simple web page"/>
+                <NavCard href="/cssgrid" title="CSS Grid Examples" description="Explore interactive CSS Grid layouts"/>
                 <NavCard href="/contact" title="Contact" description="Get in touch with me"/>
             </div>
         </div>

@@ -33,3 +33,54 @@
     opacity: 1;
     transform: translateX(5px);
 }
+
+/* Custom for HELLO WORLD */
+.animate-typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 0;
+    font-family: monospace;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    animation: typing 4s steps(12, end) forwards,
+    blink 0.75s step-end infinite 0s,
+    cursor-disappear 0.1s linear forwards 5s;
+}
+
+@keyframes cursor-disappear {
+    to {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    20% {
+        width: 3ch;
+    }
+    28% {
+        width: 3ch;
+    }
+    42% {
+        width: 6ch;
+    }
+    50% {
+        width: 6ch;
+    }
+    100% {
+        width: 12ch;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: hsla(0, 0%, 100%, 0.8);
+    }
+    50% {
+        border-color: transparent;
+    }
+}
