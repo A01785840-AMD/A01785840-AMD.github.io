@@ -14,6 +14,12 @@ import git_github_page from "@pages/blog/git_github_page.jsx";
 import terminal_guide_page from "@pages/blog/terminal_guide_page.jsx";
 import SimpleWebPage from "@pages/SimpleWebPage.js";
 
+import cssgridpage1 from "@pages/cssgrid/cssgrid1.js";
+import cssgridpage2 from "@pages/cssgrid/cssgrid2.js";
+import cssgridpage3 from "@pages/cssgrid/cssgrid3.js";
+import cssgridpage4 from "@pages/cssgrid/cssgrid4.js";
+import cssgridpage from "@pages/cssgrid/cssgridpage.js";
+
 
 const router = new Router("", {
     linkTag: "rl"
@@ -33,5 +39,14 @@ router.group('/blog', (group) => {
 });
 
 router.on(`/simpleweb`, () => Aether.render(SimpleWebPage));
+
+router.group(`/cssgrid`, (group) => {
+    group
+        .on(`/`, () => Aether.render(cssgridpage))
+        .on('/1', () => Aether.render(cssgridpage1))
+        .on('/2', () => Aether.render(cssgridpage2))
+        .on('/3', () => Aether.render(cssgridpage3))
+        .on('/4', () => Aether.render(cssgridpage4))
+})
 
 // TODO: Add the css writing animation to the Hello world title
