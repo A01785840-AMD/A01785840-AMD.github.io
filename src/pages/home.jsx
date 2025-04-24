@@ -21,6 +21,7 @@ export default function home_page() {
                 <NavCard href="/simpleweb" title="Simple WebPage" description="View my simple web page"/>
                 <NavCard href="/cssgrid" title="CSS Grid Examples" description="Explore interactive CSS Grid layouts"/>
                 <NavCard href="/contact" title="Contact" description="Get in touch with me"/>
+                <NavCard href="/game" title="Game" description=""/>
             </div>
         </div>
     );
