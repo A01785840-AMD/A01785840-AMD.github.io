@@ -20,6 +20,8 @@ import cssgridpage3 from "@pages/cssgrid/cssgrid3.js";
 import cssgridpage4 from "@pages/cssgrid/cssgrid4.js";
 import cssgridpage from "@pages/cssgrid/cssgridpage.js";
 
+import coins_game_page from "@pages/coinvideogame/coins.js"
+
 
 const router = new Router("", {
     linkTag: "rl"
@@ -28,6 +30,7 @@ const router = new Router("", {
 router
     .on('/', () => Aether.render(home_page))
     .on('/about', () => Aether.render(about_page))
+    .on('/game', () => Aether.render(coins_game_page))
     .notFound(() => Aether.render(not_found_page));
 
 
@@ -47,6 +50,4 @@ router.group(`/cssgrid`, (group) => {
         .on('/2', () => Aether.render(cssgridpage2))
         .on('/3', () => Aether.render(cssgridpage3))
         .on('/4', () => Aether.render(cssgridpage4))
-})
-
-// TODO: Add the css writing animation to the Hello world title
+});
